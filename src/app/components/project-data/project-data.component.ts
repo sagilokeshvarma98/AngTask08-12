@@ -8,7 +8,7 @@ import { ProjectService } from 'src/app/services/project.service';
   styleUrls: ['./project-data.component.css']
 })
 export class ProjectDataComponent implements OnInit {
-
+  
   constructor(public _PS:ProjectService) { }
 
   public projectData:IProject[] = []
@@ -37,5 +37,6 @@ export class ProjectDataComponent implements OnInit {
       this.getProjects()
     })
   }
+
 
 }
