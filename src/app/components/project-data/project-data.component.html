@@ -1,4 +1,9 @@
 <div class="container-fluid">
+
+    <div class="deleteRowPop" *ngIf="deleteBool">
+        <p>{{projectname}} is deleted</p>
+    </div>
+
     <div class="mb-4">
         <button class="btn btn-primary" data-toggle="modal" data-target="#addProject">
             <a class="text text-light">
@@ -6,7 +11,6 @@
             </a>
         </button>
     </div>
-
 
     <div class="modal fade" id="addProject" tabindex="-1" role="dialog">
         <div class="modal-dialog">
@@ -20,7 +24,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form #projectForm="ngForm" (ngSubmit)="postProjectDetails(projectForm.value)">
+                    <form #projectForm="ngForm">
                         <div class="form-group">
                             <label class="text text-primary h6" for="projectName">Project name</label>
                             <input type="text" class="form-control" ngModel #name="ngModel" name="projectName"
@@ -46,7 +50,9 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success" [disabled]="projectForm.invalid">A D
+                            <button type="button" class="btn btn-success"
+                                (click)="postProjectDetails(projectForm.value)" [disabled]="projectForm.invalid"
+                                data-dismiss="modal">A D
                                 D</button>
                         </div>
                     </form>
@@ -95,7 +101,7 @@
                     <button class="btn btn-warning">U P D A T E</button>
                 </td>
                 <td>
-                    <button class="btn btn-danger">D E L E T E</button>
+                    <button class="btn btn-danger" (click)="deleteProject(data.id);projectname=data.projectName">D E L E T E</button>
                 </td>
                 <td>
                     <button class="btn btn-primary">V I E W</button>

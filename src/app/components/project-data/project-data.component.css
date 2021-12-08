@@ -1,0 +1,12 @@
+.deleteRowPop {
+    position: absolute;
+    left: 40%;
+    color: white;
+    width: max-content;
+    height: 50px;
+    background-color: rgb(161, 33, 33);
+}
+
+.deleteRowPop p {
+    padding: 10px;
+}

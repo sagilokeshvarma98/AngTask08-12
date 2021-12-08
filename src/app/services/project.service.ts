@@ -20,4 +20,8 @@ export class ProjectService {
     return this.hc.post<IProject>(this.URL,data)
   }
 
+  deleteProject(id:number):Observable<IProject> {
+    return this.hc.delete<IProject>(`${this.URL}/${id}`)
+  }
+
 }

@@ -13,6 +13,9 @@ export class ProjectDataComponent implements OnInit {
 
   public projectData:IProject[] = []
 
+  projectname:string = ""
+  deleteBool:boolean = false;
+
   ngOnInit(): void {
     this.getProjects()
   }
@@ -22,7 +25,17 @@ export class ProjectDataComponent implements OnInit {
   }
 
   postProjectDetails(data:IProject) {
-    this._PS.postProject(data).subscribe(res=>this.getProjects())
+    this._PS.postProject(data).subscribe(()=>this.getProjects())
+  }
+
+  deleteProject(id:number) {
+    this._PS.deleteProject(id).subscribe(()=>{
+      this.deleteBool = true
+      setTimeout(()=>{
+        this.deleteBool = false
+      },2000)
+      this.getProjects()
+    })
   }
 
 }
