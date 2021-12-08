@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "projectName": "Google Inc",
+      "projectLead": "Sundar pichaya",
+      "startDate": "10-02-2021"
+    },
+    {
+      "projectName": "Amazon",
+      "projectLead": "Buzz",
+      "startDate": "2021-12-23",
+      "id": 2
+    },
+    {
+      "projectName": "dfgfdghd",
+      "projectLead": "ghfdh",
+      "startDate": "2021-12-18",
+      "id": 3
+    },
+    {
+      "projectName": "dhdh",
+      "projectLead": "hggfdhd",
+      "startDate": "2021-12-24",
+      "id": 4
+    }
+  ]
+}
