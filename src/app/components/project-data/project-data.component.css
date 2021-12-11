@@ -1,12 +1,67 @@
+section {
+    background: url(../../../assets/Images/background.webp);
+    background-repeat: no-repeat;
+    height: 90vh;
+}
+
+table thead {
+    color: white;
+    font-family: monospace;
+}
+
+
+table tbody tr {
+    color: white;
+}
+
 .deleteRowPop {
     position: absolute;
-    left: 40%;
+    left: 44%;
     color: white;
     width: max-content;
     height: 50px;
     background-color: rgb(161, 33, 33);
 }
 
+.updateRowPop {
+    position: absolute;
+    left: 44%;
+    color: white;
+    width: max-content;
+    height: 50px;
+    background-color: green;
+}
+
+.updateRowPop p {
+    padding: 10px;
+}
+
 .deleteRowPop p {
     padding: 10px;
 }
+
+tbody tr a {
+    color: yellow;
+}
+
+tbody tr a:hover {
+    font-weight: 600;
+    font-size: 25px;
+    color: white;
+}
+
+.fa-wrench {
+    color: whitesmoke;
+    font-size: small;
+    position: relative;
+    top: -15px;
+    left: -25%;
+}
+
+.fa-times {
+    color: red;
+    font-size: 30px;
+    padding-left: 5px;
+    margin: 5px 0px 0px 8px;
+}
+

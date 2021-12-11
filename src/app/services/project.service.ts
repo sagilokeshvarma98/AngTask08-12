@@ -10,18 +10,26 @@ export class ProjectService {
 
   constructor(private hc:HttpClient) { }
 
-  public URL:string = "http://localhost:3000/projects"
+  private _URL:string = "http://localhost:3000/projects"
 
   getProjects():Observable<IProject[]> {
-    return this.hc.get<IProject[]>(this.URL)
+    return this.hc.get<IProject[]>(this._URL)
   }
 
   postProject(data:IProject):Observable<IProject> {
-    return this.hc.post<IProject>(this.URL,data)
+    return this.hc.post<IProject>(this._URL,data)
   }
 
   deleteProject(id:number):Observable<IProject> {
-    return this.hc.delete<IProject>(`${this.URL}/${id}`)
+    return this.hc.delete<IProject>(`${this._URL}/${id}`)
+  }
+
+  getSingleProject(id:number):Observable<IProject[]> {
+    return this.hc.get<IProject[]>(this._URL+`?id=${id}`)
+  }
+
+  updateProject(updtObj:IProject) {
+    return this.hc.put(this._URL+`/${updtObj.id}`,updtObj)
   }
 
 }

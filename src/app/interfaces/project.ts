@@ -1,6 +1,7 @@
 export interface IProject {
-    id:number,
+    id: number,
     projectName: string,
     projectLead: string,
-    startDate: string
+    startDate: string,
+    isUpdated: boolean
 }

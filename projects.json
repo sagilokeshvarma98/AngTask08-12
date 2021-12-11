@@ -2,15 +2,10 @@
   "projects": [
     {
       "id": 1,
-      "projectName": "Google Inc",
+      "projectName": "Google Inc LTD",
       "projectLead": "Sundar pichaya",
-      "startDate": "10-02-2021"
-    },
-    {
-      "projectName": "xfghdfh",
-      "projectLead": "fghfj",
-      "startDate": "2021-12-25",
-      "id": 2
+      "startDate": "2021-12-21",
+      "isUpdated": true
     }
   ]
 }
