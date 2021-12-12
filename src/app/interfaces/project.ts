@@ -3,5 +3,6 @@ export interface IProject {
     projectName: string,
     projectLead: string,
     startDate: string,
-    isUpdated: boolean
+    isUpdated: boolean,
+    background: string
 }

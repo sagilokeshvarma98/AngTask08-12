@@ -1,0 +1,16 @@
+* {
+    width: 100%;
+    min-height: 88vh;
+    max-height: max-content;
+    background-image: url(https://www.elegantthemes.com/blog/wp-content/uploads/2020/02/000-404.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section{
+    padding-top: 18%;
+    padding-left: 40%;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}

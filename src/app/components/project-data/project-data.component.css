@@ -1,7 +1,9 @@
 section {
     background: url(../../../assets/Images/background.webp);
     background-repeat: no-repeat;
-    height: 90vh;
+    min-height: 92vh;
+    max-height: max-content;
+    background-size: cover;
 }
 
 table thead {
@@ -9,8 +11,13 @@ table thead {
     font-family: monospace;
 }
 
+table tbody tr:hover {
+    background: whitesmoke;
+    color: black;
+}
 
 table tbody tr {
+    font-family: 'Courier New', Courier, monospace;
     color: white;
 }
 
@@ -25,6 +32,7 @@ table tbody tr {
 
 .updateRowPop {
     position: absolute;
+    top: 9%;
     left: 44%;
     color: white;
     width: max-content;
@@ -41,21 +49,26 @@ table tbody tr {
 }
 
 tbody tr a {
-    color: yellow;
+    font-weight: 600;
+    color: rgb(116, 116, 21);
 }
 
 tbody tr a:hover {
     font-weight: 600;
     font-size: 25px;
-    color: white;
+    color: black;
 }
 
 .fa-wrench {
-    color: whitesmoke;
+    color: yellow;
     font-size: small;
     position: relative;
     top: -15px;
     left: -25%;
+}
+
+.fa-wrench:hover {
+    color: black;
 }
 
 .fa-times {

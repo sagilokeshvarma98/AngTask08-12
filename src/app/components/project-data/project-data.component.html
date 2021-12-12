@@ -10,7 +10,7 @@
         </div>
     
         <div class="pb-4 pt-4">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#addProject">
+            <button class="btn btn-primary" (click)="projectForm.reset();" data-toggle="modal" data-target="#addProject">
                 <a class="text text-light">
                     A D D
                 </a>
@@ -55,14 +55,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="text text-primary h6" for="projectBG">Project start date </label>
-                                <input type="file" class="form-control" name="background"
+                                <label class="text text-primary h6" for="projectBG">Project Image(URL)</label>
+                                <input type="text" class="form-control" ngModel #projectImage="ngModel" name="background"
                                     id="background" required>
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn btn-success"
-                                    (click)="postProjectDetails(projectForm.value)" [disabled]="projectForm.invalid"
-                                    data-dismiss="modal">
+                                <button type="button" class="btn btn-success" data-dismiss="modal"
+                                    (click)="postProjectDetails(projectForm.value);" [disabled]="projectForm.invalid">
                                     A D D
                                 </button>
                             </div>
@@ -111,7 +110,7 @@
                     </td>
                     <td>
                         <span *ngIf="!data.isUpdated; else EditDate">
-                            {{data.startDate}}
+                            {{data.startDate | date}}
                         </span>
                     </td>
                     <td *ngIf="data.isUpdated">

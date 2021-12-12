@@ -1,0 +1,36 @@
+<div class="container-fluid mainDiv">
+    <div class="row">
+        <div class="offset-3 col-6">
+            <div class="card">
+                <div class="card-header text-center text-light">
+                    <span>L O G I N &nbsp; I N T O &nbsp; Y O U R &nbsp; A C C O U N T</span>
+                </div>
+                <div class="card-body">
+                    <form #loginForm="ngForm" (ngSubmit)="validateUser(loginForm.value)">
+                        <div class="form-group">
+                            <label for="username">U S E R N A M E</label>
+                            <input type="text" class="form-control" name="username" id="username" ngModel #username="ngModel" required>
+                            <div *ngIf="username.touched && username.invalid">
+                                <b class="text text-warning">
+                                    Please enter a username
+                                </b>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">P A S S W O R D</label>
+                            <input type="text" class="form-control" name="password" id="password" ngModel #password="ngModel" required>
+                            <div *ngIf="password.touched && password.invalid">
+                                <b class="text text-warning">
+                                    Please enter a password
+                                </b>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-success mt-3" [disabled]="loginForm.invalid" type="submit">L O G I N</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

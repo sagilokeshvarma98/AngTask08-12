@@ -10,13 +10,18 @@ import { ProjectService } from 'src/app/services/project.service';
 })
 export class ViewProjectComponent implements OnInit {
 
-  constructor(public active:ActivatedRoute, private _PS: ProjectService) { }
-  public myProject:IProject | undefined
+  constructor(public active: ActivatedRoute, private _PS: ProjectService) { }
+  public myProject: IProject | undefined
+  public imageStyle = {
+    backgroundImage: ""
+  }
+
   ngOnInit(): void {
-    this.active.params.subscribe(res=>{
-        this._PS.getSingleProject(res.id).subscribe((res:IProject[])=>{
-          this.myProject = res[0];
-        })
+    this.active.params.subscribe(res => {
+      this._PS.getSingleProject(res.id).subscribe((res: IProject[]) => {
+        this.myProject = res[0];
+        this.imageStyle.backgroundImage = `url(${this.myProject.background})`
+      })
     })
   }
 

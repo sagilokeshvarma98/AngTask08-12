@@ -1,7 +1,7 @@
-  <nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1 text text-primary">M Y P R O J E C T S</span>
-  </nav>
-  
-  <router-outlet>
-
-  </router-outlet>
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1 text text-primary">M Y P R O J E C T S</span>
+  <div class="text-right">
+    <span class="text text-primary mr-3">{{name}}</span>
+    <a class="text text.primary" (click)="logout()">L O G O U T</a>
+  </div>
+</nav>

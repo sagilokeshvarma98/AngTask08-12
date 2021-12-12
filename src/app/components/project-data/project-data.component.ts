@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IProject } from 'src/app/interfaces/project';
 import { ProjectService } from 'src/app/services/project.service';
 
@@ -9,7 +10,7 @@ import { ProjectService } from 'src/app/services/project.service';
 })
 export class ProjectDataComponent implements OnInit {
 
-  constructor(public _PS: ProjectService) { }
+  constructor(public _PS: ProjectService, public route:Router) { }
 
   public projectData: IProject[] = [];
   public count: number = 0;
@@ -22,7 +23,8 @@ export class ProjectDataComponent implements OnInit {
     projectName: "",
     projectLead: "",
     startDate: "",
-    isUpdated: false
+    isUpdated: false,
+    background: ""
   }
 
   ngOnInit(): void {
@@ -33,11 +35,14 @@ export class ProjectDataComponent implements OnInit {
     this._PS.getProjects().subscribe((res: IProject[]) => this.projectData = res.map((x: IProject) => {
       x.isUpdated = false;
       return x
-    }))
+    }),
+    ()=>this.route.navigate(['error']))
   }
 
   postProjectDetails(data: IProject) {
-    this._PS.postProject(data).subscribe(() => this.getProjects())
+    this._PS.postProject(data).subscribe(() => {
+      this.getProjects()
+    })
   }
 
   deleteProject(id: number) {
