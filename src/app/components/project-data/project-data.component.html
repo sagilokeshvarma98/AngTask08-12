@@ -92,7 +92,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-center" *ngFor="let data of projectData; let i = index">
+                <tr class="text-center" [routerLink]="'view-project/'+data.id" target="_blank" *ngFor="let data of projectData; let i = index">
                     <td>
                         <a [routerLink]="'view-project/'+data.id" target="_blank">{{data.id}}</a>
                     </td>
