@@ -64,7 +64,7 @@ tbody tr a:hover {
     font-size: small;
     position: relative;
     top: -15px;
-    left: -25%;
+    left: -10%;
 }
 
 .fa-wrench:hover {

@@ -92,7 +92,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-center" [routerLink]="'view-project/'+data.id" target="_blank" *ngFor="let data of projectData; let i = index">
+                <tr class="text-center" *ngFor="let data of projectData; let i = index">
                     <td>
                         <a [routerLink]="'view-project/'+data.id" target="_blank">{{data.id}}</a>
                     </td>
@@ -115,7 +115,7 @@
                     </td>
                     <td *ngIf="data.isUpdated">
                         <button class="btn btn-warning updtBtn" (click)="updateRow(i,data.id)">
-                            U P D A T E
+                            UPDATE
                         </button>
                     </td>
                     <td *ngIf="data.isUpdated">
@@ -123,7 +123,7 @@
                     </td>
                     <td>
                         <button class="btn btn-danger" (click)="deleteProject(data.id);projectname=data.projectName">
-                            D E L E T E
+                            DELETE
                         </button>
                     </td>
                 </tr>
